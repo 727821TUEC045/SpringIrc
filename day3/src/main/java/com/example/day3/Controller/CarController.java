@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import com.example.day3.Service.Carservice;
+import com.example.day3.Service.CarService;
 import com.example.day3.Model.CarModel;
 
 @RestController
@@ -14,9 +14,9 @@ public class CarController {
 	@Autowired
 	public CarService Cser;
 	@PostMapping("/saveCar")
-	public carModel addDetails(@RequestBody CarModel cr)
+	public CarModel addDetails(@RequestBody CarModel cr)
 	{
-		return cser.saveninfo(cr);
+		return Cser.saveinfo(cr);
 	}
 
 }
