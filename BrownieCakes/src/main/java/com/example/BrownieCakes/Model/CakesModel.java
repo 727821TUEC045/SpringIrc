@@ -1,5 +1,4 @@
-
-package com.example.OnlineCakeShop.Model;
+package com.example.BrownieCakes.Model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,21 +6,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="sweets")
-public class CakeModel {
-	
+@Table(name="Treat")
+public class CakesModel {
 	@Id
-	@Column(name="cid")
-	
+	@Column(name="id")
 	
 	private int id;
-	private String name;
-	private String address;
+	private String  name;
 	private String phone;
-	private String payment;
+	private String address;
 	private String item;
 	private int kgs;
-	private int pincode;
+	private String email;
+	private String payment;
+	 private String dod;
 	public int getId() {
 		return id;
 	}
@@ -34,23 +32,17 @@ public class CakeModel {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
 	public String getPhone() {
 		return phone;
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getPayment() {
-		return payment;
+	public String getAddress() {
+		return address;
 	}
-	public void setPayment(String payment) {
-		this.payment = payment;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getItem() {
 		return item;
@@ -64,12 +56,26 @@ public class CakeModel {
 	public void setKgs(int kgs) {
 		this.kgs = kgs;
 	}
-	public int getPincode() {
-		return pincode;
+	public String getEmail() {
+		return email;
 	}
-	public void setPincode(int pincode) {
-		this.pincode = pincode;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPayment() {
+		return payment;
+	}
+	public void setPayment(String payment) {
+		this.payment = payment;
+	}
+	public String getDod() {
+		return dod;
+	}
+	public void setDod(String dod) {
+		this.dod = dod;
 	}
 	
 	
+	
+
 }
