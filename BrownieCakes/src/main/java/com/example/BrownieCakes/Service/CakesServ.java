@@ -1,8 +1,10 @@
 package com.example.BrownieCakes.Service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 import com.example.BrownieCakes.Model.CakesModel;
 import com.example.BrownieCakes.Repository.CakesRepo;
 @Service
@@ -28,6 +30,18 @@ public class CakesServ {
 	public CakesModel updatedetails(CakesModel id) {
 		// TODO Auto-generated method stub
 		return Crepo.saveAndFlush(id);
+	}
+
+	public List<CakesModel> sortDesc(String name) {
+		// TODO Auto-generated method stub
+		return  Crepo.findAll(Sort.by(name).ascending());
+	}
+	
+	
+	//decending
+	public List<CakesModel> sortDescs(String name) {
+		// TODO Auto-generated method stub
+		return  Crepo.findAll(Sort.by(name).descending());
 	}
 	
 

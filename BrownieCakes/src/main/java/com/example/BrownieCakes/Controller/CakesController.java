@@ -1,5 +1,6 @@
 package com.example.BrownieCakes.Controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +48,18 @@ public class CakesController {
 		return Cser.updatedetails(id);
 	}
 	
+	//sort by ascending order
+	@GetMapping("sortDesc/{name}")
+	public List<CakesModel>sortPerrson(@PathVariable("name")String name )
+	{
+		return Cser.sortDesc(name);
+	}
+	
+	//descending
+	@GetMapping("sortDescs/{name}")
+	public List<CakesModel>sortPerrsons(@PathVariable("name")String name )
+	{
+		return Cser.sortDescs(name);
+	}
 
 }
