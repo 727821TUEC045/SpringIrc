@@ -91,7 +91,50 @@ public class CakesController {
 	{
 		return csr.byname(cid);
 	}
-
+	@GetMapping("/startend/{start}/{end}")
+	public List<CakesModel>statendId(@PathVariable("start")int start,@PathVariable("end")int end)
+	{
+		return csr.startEnd(start,end);
+	}
+    @DeleteMapping("/deletebyid/{id}/{name}")
+    public String deletePerson(@PathVariable("id")int id,@PathVariable("name")String name)
+    {
+    	csr.deleteId(id,name);
+    	return "deleted";
+    }
+    @PutMapping("/updatequery/{id}/{name}")
+    public void updateByQuery(@PathVariable("id")int id,@PathVariable("name")String name)
+    {
+    	csr.updateByQuery(id,name);
+    }
+    
+    //get by name using
+    @GetMapping("/jpqlget/{name}")
+    public List<CakesModel>getdetailname(@PathVariable("name")String name)
+    {
+    	return csr.getjpqlname(name);
+    }
+    
+    
+  //delete by jpql query by id
+    @DeleteMapping("/deletejpql/{id}")
+    public String deletejpqlid(@PathVariable("id")int id )
+    {
+  	  csr.deletejpqlid(id);
+  	  return "Deleted successfully using JPQL Query !";
+    }
 	
-	
+    //update by jpql query 
+    @PutMapping("/upadtejpql/{a}/{b}")
+     public void updatejpql(@PathVariable("a")String a,@PathVariable("b")int b)
+     {
+    	 csr.updatejpql(a,b);
+     }
+	 //jpql query for getting details using btw
+    @GetMapping("/getbtw/{start}/{end}")
+    public List<CakesModel>getbtw(@PathVariable("start")int start,@PathVariable("end")int end)
+    {
+    	return csr.getbtw(start,end);
+    }
+    
 }

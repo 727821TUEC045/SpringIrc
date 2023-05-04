@@ -23,7 +23,7 @@ private LoginRepo repol;
 	{
 		if(user.getPwd().equals(pwd))
 		{
-			return "Login successful";		
+			return "Login successfull";		
 			
 	     }
 	else
