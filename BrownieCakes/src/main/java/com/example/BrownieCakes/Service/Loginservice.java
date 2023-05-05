@@ -11,9 +11,9 @@ import com.example.BrownieCakes.Repository.LoginRepo;
 public class Loginservice {
 @Autowired
 private LoginRepo repol;
-	public String checkLogin(String name, String pwd)
+	public String checkLogin(String uname, String password)
    {
-	LoginModel user=repol.findByname(name);
+	LoginModel user=repol.findByname(uname);
 	if(user==null)
 		// TODO Auto-generated method stub
 	{
@@ -21,7 +21,7 @@ private LoginRepo repol;
 	}
 	else
 	{
-		if(user.getPwd().equals(pwd))
+		if(user.getPassword().equals(password))
 		{
 			return "Login successfull";		
 			

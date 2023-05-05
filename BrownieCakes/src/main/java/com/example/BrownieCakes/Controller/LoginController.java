@@ -16,12 +16,14 @@ public class LoginController {
 @Autowired
 private Loginservice service;
 
-@PostMapping("/login")
+
+
+@PostMapping("/posting")
 public String login(@RequestBody Map<String,String>loginData)
 {
-	String name=loginData.get("name");
-	String pwd=loginData.get("pwd");
-	String result=service.checkLogin(name,pwd);
+	String uname=loginData.get("uname");
+	String password=loginData.get("password");
+	String result=service.checkLogin(uname,password);
 	 return result;
 }
 
